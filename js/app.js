@@ -64,12 +64,12 @@ var Board = function() {
   }
 
   this.reset = function(){
-    $('.match').toggle('bounce', {time: 5}, 1500);
-    $('.hidden_card').toggle('bounce', {time: 5}, 1500);
+    $('.match').toggle('highlight', {time: 5}, 1500);
+    $('.hidden_card').toggle('highlight', {time: 5}, 1500);
     $('.match').attr('class', 'hidden_card');
     this.placeCards();
     $('i').hide();
-    $('.hidden_card').toggle('bounce', {time: 5}, 1500);
+    $('.hidden_card').toggle('highlight', {time: 5}, 1500);
     $('#score').text(0);
   }
 
@@ -136,13 +136,13 @@ $(function(){
         setTimeout(function(){
           board.toggleCard(firstCard);
           board.toggleCard(secondCard);
-        },150);
+        },250);
       }
 
       setTimeout(function(){
         firstCard = undefined;
         secondCard = undefined;
-      },200)
+      },300)
     }
     else {
       firstCard = new Card($(this.firstChild.firstChild).context.className, $(this).attr("id"));
